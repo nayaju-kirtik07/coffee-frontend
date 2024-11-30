@@ -80,17 +80,17 @@ const LandingPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === testimonials.length - slidesToShow ? 0 : prev + 1
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => 
+  //     prev === testimonials.length - slidesToShow ? 0 : prev + 1
+  //   );
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === 0 ? testimonials.length - slidesToShow : prev - 1
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => 
+  //     prev === 0 ? testimonials.length - slidesToShow : prev - 1
+  //   );
+  // };
 
   useEffect(() => {
     if (location.state?.showLoginSuccess) {
