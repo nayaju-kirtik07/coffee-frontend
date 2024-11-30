@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation , useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import CustomSnackbar from '../../Components/CustomSnackbar/CustomSnackbar';
@@ -14,6 +14,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const images = {
     heroBackground: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
     deepBlack: "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
@@ -130,7 +131,7 @@ const LandingPage = () => {
                     url(${images.heroBackground}) center/cover`
         }}>
           <h1>Start your day with a cup of coffee!</h1>
-          <button className="cta-button">Explore Menu</button>
+          <button className="cta-button" onClick={() => navigate('/menu')}>Explore Menu</button>
         </section>
 
         <section className="features-section">

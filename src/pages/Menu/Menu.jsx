@@ -1,10 +1,12 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useCart } from "../../Context/CartContext";
+import { useFilter } from "../../Context/FilterContext";
 import "./Menu.css";
 
 const Menu = () => {
   const { addToCart } = useCart();
+  const { filterItems } = useFilter();
 
   const menuItems = [
     {
@@ -51,6 +53,8 @@ const Menu = () => {
     }
   ];
 
+  const filteredMenuItems = filterItems(menuItems);
+
   const handleAddToCart = (item) => {
     addToCart({
       id: item.id,
@@ -72,7 +76,7 @@ const Menu = () => {
       <div className="menu-page">
         <h2>Our Coffee Selection</h2>
         <div className="menu-container">
-          {menuItems.map((item, index) => (
+          {filteredMenuItems.map((item, index) => (
             <div
               key={item.id}
               className={`menu-item ${index % 2 === 0 ? "left" : "right"}`}
