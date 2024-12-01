@@ -41,8 +41,8 @@ const Signup = () => {
                 last_name: formData.last_name,
                 username: formData.username,
                 email: formData.email,
-                password: formData.hashPassword,
-                c_password: formData.c_hashPassword
+                hashPassword: formData.password,
+                c_hashPassword: formData.c_password
             });
 
             if (response.status === 201) {
