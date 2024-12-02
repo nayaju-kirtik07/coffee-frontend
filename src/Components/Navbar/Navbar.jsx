@@ -63,7 +63,6 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate("/login");
-    localStorage.clear();
   };
 
   const drawer = (
